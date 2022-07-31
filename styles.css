@@ -286,3 +286,37 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
     color: #2c6fff;
     position: relative;
 }
+
+.about-text h3 {
+    margin-bottom: 2%;
+    margin-top: 3%;
+}
+
+.certifications {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.certificate-card {
+    width: 350px;
+    background-color: #4E6874;
+    padding: 2%;
+    border-radius: 7px;
+    margin-bottom: 2%;
+}
+
+.certificate-card img {
+    width: 100%;
+    margin-bottom: 1.5%;
+    border-radius: 7px;
+}
+
+.certificate-card p {
+    color: white;
+    font-size: 1rem;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+}
