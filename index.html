@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ad01f0af1d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav id="nav">
@@ -18,8 +19,8 @@
             <li><a href="#about">About</a></li>
             <li><a href="#exp">Experience</a></li>
             <li><a href="#edu">Education</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#proj">Projects</a></li>
+            <li><a href="#cont">Contact</a></li>
         </ul>
     </nav>
     <section class="basic-info">
@@ -43,25 +44,30 @@
         </div>
     </section>
     <section id="about" class="about">
-        <div class="about-text">
-            <h2>About</h2>
-            <p>Hi there, myself Shivakumar M from Bangalore, India.</p>
-            <p>Persued my under graduation in Computer Science and Engineering at Ramaiah University of Applied Sciences.<br>Currently working as MEAN stack developer at Mindtree, India.</p>
-            <p>I like to design and build content for the web and when I'm not doing this, I play a few sports, watch shows and movies on OTT. Also a big fan of Anime.</p>
-            <h3>My skills</h3>
-            <div class="skills">
-                <p>Javascript, Typescript, C, Java, Python, HTML5, CSS, Angular, Bootstrap, Express, Nodejs, Git, MongoDB, SQL.</p>
+        <h2>About</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hi there, myself Shivakumar M from Bangalore, India.</p>
+                <p>Persued my under graduation in Computer Science and Engineering at Ramaiah University of Applied Sciences.<br>Currently working as MEAN stack developer at Mindtree, India.</p>
+                <p>I like to design and build content for the web and when I'm not doing this, I play a few sports, watch shows and movies on OTT. Also a big fan of Anime.</p>
+                <h3>My skills</h3>
+                <div class="skills">
+                    <p>Javascript, Typescript, C, Java, Python, HTML5, CSS, Angular, React, Bootstrap, Express, Nodejs, Git, MongoDB, SQL.</p>
+                </div>
+                <h3>Certtfications</h3>
+                <div class="certifications">
+                    <div class="certificate-card">
+                        <img src="./assets/coursera-git.PNG" alt="Coursera certifacte for version controlling with git">
+                        <p>Version controlling with git</p>
+                    </div>
+                    <div class="certificate-card">
+                        <img src="./assets/coursera-node.PNG" alt="Coursera certifacte for Server-side development with Nodejs, Express and MongoDB">
+                        <p>Server-side development with Nodejs, Express and MongoDB</p>
+                    </div>
+                </div>
             </div>
-            <h3>Certtfications</h3>
-            <div class="certifications">
-                <div class="certificate-card">
-                    <img src="./assets/coursera-git.PNG" alt="Coursera certifacte for version controlling with git">
-                    <p>Version controlling with git</p>
-                </div>
-                <div class="certificate-card">
-                    <img src="./assets/coursera-node.PNG" alt="Coursera certifacte for Server-side development with Nodejs, Express and MongoDB">
-                    <p>Server-side development with Nodejs, Express and MongoDB</p>
-                </div>
+            <div class="portrait">
+                <img src="./assets/my-portrait.jpg" alt="">
             </div>
         </div>
     </section>
@@ -129,11 +135,66 @@
             </div>
         </div>
     </section>
-    <section class="third-info">
+    <section id="proj" class="projects">
         <h2>Projects</h2>
+        <div class="project-card">
+            <img src="./assets/moviesApp.PNG" alt="">
+            <div class="project-details">
+                <p>
+                    MEAN stack project using TMDB API to get details of movies, tv shows and anime. It authenticates the user with credentials used during sign up.
+                    And once logged in, the user can see top daily and weekly movies and shows, search and also add/rewmove them as favorites. 
+                </p>
+                <div class="links">
+                    <a href="https://github.com/Shiva1110/MoviesApp-Angular" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://moviesapp-7666e.web.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="./assets/nodejs.png" alt="">
+            <div class="project-details">
+                <p>Nodejs and express projects, It contains the backend for MoviesApp project and some other small nodejs projects.</p>
+                <div class="links">
+                    <a href="https://github.com/Shiva1110/Nodejs" target="_blank"><i class="fas fa-code"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="./assets/spotifyClone.PNG" alt="">
+            <div class="project-details">
+                <p>Created a cloned app of Spotify which has landing, sing-up and log-in pages. Built using MERN stack.</p>
+                <div class="links">
+                    <a href="https://github.com/Shiva1110/Spotify-clone-FE-reactjs" target="_blank"><i class="fas fa-code"></i></a>
+                    <a href="https://spotify-clone-9012b.web.app" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
     </section>
-    <section class="edu">
-        <h2>Get in Touch</h2>
+    <section id="cont" class="contact">
+        <h2>Contact</h2>
+        <div class="content">
+            <h3>Get In touch</h3>
+            <form id="mailform">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+                <label for="body">Body</label>
+                <textarea id="body" name="body" cols="30" rows="6"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+    <section class="social">
+        <div class="social-links">
+            <a href="https://github.com/Shiva1110" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/shivakumar-m-563a7814b" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://twitter.com/shivakumar1110"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/shiva_dmn" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>Designed and developed by Shivakumar M</p>
     </section>
     <script src="./main.js"></script>
 </body>
