@@ -19,10 +19,21 @@ nav {
     position: sticky;
     top: 0;
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(7px);
     z-index: 1;
     transition: all 0.2s;
 }
+
+nav:before {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+  }
 
 nav a {
     text-decoration: none;
@@ -35,11 +46,17 @@ nav img {
 nav ul {
     display: flex;
     width: 43%;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 nav ul li {
     list-style: none;
+    margin-left: 7%;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
 }
 
 nav ul li a {
@@ -465,10 +482,9 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
 }
 
 .contact form button {
-    width: 22%;
     border: none;
     outline: none;
-    padding: 0.7rem 0.4rem;
+    padding: 0.6rem 1.5rem;
     font-family: 'Poppins', sans-serif, Arial, Helvetica;
     background-color: #4E6874;
     color: white;
@@ -512,6 +528,10 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
     font-size: 1.8rem;
 }
 
+.menu-bar {
+    display: none;
+}
+
 ::-webkit-scrollbar, .main-content::-webkit-scrollbar {
     width: 7px;
 }
@@ -551,7 +571,7 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
 
 @media screen and (max-width: 1200px) {
     nav ul {
-        width: 48%;
+        width: 50%;
     }
     .about .about-text {
         width: 80%;
@@ -585,17 +605,17 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
     .about .about-text {
         width: 90%;
     }
+    .social-links i {
+        font-size: 1.5rem;
+    }
     nav ul {
-        width: 52%;
+        width: 57%;
     }
     .contact form {
-        width: 50%;
+        width: 60%;
     }
-    .line::before {
-        content: '';
-        height: 0;
-        width: 0;
-        background-color: none;
+    .line::before, .line-list .list-content:nth-child(odd)::after, .line-list .list-content:nth-child(even)::after, .line-list .list-content::after {
+        content: none;
     }
     .line-content .date {
         font-size: 0.8rem;
@@ -604,5 +624,171 @@ nav ul li a:hover::after, .resume a:hover::after, .illus a:hover:after {
         letter-spacing: 1px;
         position: static;
         margin-bottom: 1%;
+    }
+    .line-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .list-content {
+        max-width: none;
+        width: 80%;
+    }
+    .line-list .list-content:nth-child(odd), .line-list .list-content:nth-child(even) {
+        float: none;
+        clear: none;
+        transform: none;
+        border-radius: 20px;
+    }
+    .project-card img {
+        width: 80%;
+    }
+    .project-card .project-details {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .social-links {
+        width: 23%;
+    }
+    .certifications {
+        flex-direction: column;
+        align-items: center;
+    }
+    .certificate-card {
+        width: 70%;
+        margin-bottom: 5%;
+    }
+    .certificate-card:last-child {
+        margin-bottom: 0;
+    }
+    .menu-bar {
+        padding: 1% 1.5%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    nav .nav-items {
+        position: fixed;
+        top: 58px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.5);
+        -webkit-backdrop-filter: blur(7px);
+        backdrop-filter: blur(7px);
+        width: 100%;
+        transition: all 0.2s ease;
+        transform-origin: top;
+        transform: scaleY(0);
+    }
+    nav ul li {
+        margin: 0;
+        padding-top: 1%;
+    }
+    nav ul li:first-child {
+        padding-top: 2%;
+    }
+    nav ul li:last-child {
+        padding-bottom: 1.5%;
+    }
+    nav .show {
+        transform: scaleY(1);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contact form {
+        width: 70%;
+    }
+    .social-links {
+        width: 27%;
+    }
+    .project-card img {
+        width: 90%;
+    }
+    .project-card .project-details {
+        width: 90%;
+    }
+    .info h1 {
+        font-size: 3rem;
+    }
+    .greet {
+        font-size: 1rem;
+    }
+    .greet p span{
+        font-size: 1.1rem;
+    }
+    .resume {
+        font-size: 1rem;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+    .about-content .portrait {
+        width: 200px;
+        height: 200px;
+    }
+    .list-content {
+        width: 90%;
+    }
+    .line-list .list-content:nth-child(odd), .line-list .list-content:nth-child(even) {
+        border-radius: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    nav, .basic-info, .about, .edu, .contact, .projects, .third-info {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+    .about h2, .third-info h2, .edu h2, .projects h2, .contact h2 {
+        font-size: 1.8rem;
+    }
+    nav .nav-items {
+        top: 55px;
+    }
+    .line-content h3 {
+        font-size: 1.2rem;
+    }
+    .contact form {
+        width: 75%;
+    }
+    .social-links {
+        width: 35%;
+    }
+    .info h1 {
+        font-size: 2.5rem;
+    }
+    .certificate-card {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .contact form {
+        width: 80%;
+    }
+    .info h1 {
+        font-size: 2rem;
+    }
+    nav .nav-items {
+        top: 52px;
+    }
+    .social-links i {
+        font-size: 1.2rem;
+    }
+    .social {
+        padding: 3% 5%;
+    }
+    .social p {
+        font-size: 0.85rem;
+    }
+    .about-content .portrait {
+        width: 160px;
+        height: 160px;
     }
 }

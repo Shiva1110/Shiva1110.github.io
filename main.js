@@ -2,15 +2,24 @@ var oldScroll = window.pageYOffset;
 var navbar = document.getElementById("nav");
 var form = document.getElementById("mailform");
 
-window.onscroll = function() {
-var currScroll = window.pageYOffset;
-  if (oldScroll > currScroll) {
-    navbar.style.top = "0";
+// window.onscroll = function() {
+// var currScroll = window.pageYOffset;
+//   if (oldScroll > currScroll) {
+//     navbar.style.top = "0";
+//   } else {
+//     navbar.style.top = "-80px";
+//   }
+//   oldScroll = currScroll;
+// }
+
+showHideNav = function () {
+  var items = document.querySelector('.nav-items');
+  if(items.className === "nav-items") {
+      items.className += " show";
   } else {
-    navbar.style.top = "-80px";
+      items.className = "nav-items";
   }
-  oldScroll = currScroll;
-}
+};
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -28,4 +37,4 @@ form.addEventListener('submit', (e) => {
         window.open(`mailto:shiva11101998@gmail.com?subject=${subject}&body=${body}\nThanks and Regards,\n${name}`);
         form.reset();
     }
-})
+});
